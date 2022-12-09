@@ -8,6 +8,8 @@ flask = "*"
 pytest = "*"
 flasgger = "*"
 setuptools = "*"
+scikit-learn = "*"
+pandas = "*"
 
 [dev-packages]
 
