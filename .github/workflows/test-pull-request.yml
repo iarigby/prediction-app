@@ -1,0 +1,16 @@
+name: run tests
+
+on: pull_request
+
+jobs:
+  test:
+      runs-on: ubuntu-latest
+
+      steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 'pypy3.9'
+      - run: pip install pipenv
+      - run: pipenv install -d
+      - run: pipenv run tests

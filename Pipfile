@@ -7,6 +7,7 @@ name = "pypi"
 flask = "*"
 pytest = "*"
 flasgger = "*"
+setuptools = "*"
 
 [dev-packages]
 
