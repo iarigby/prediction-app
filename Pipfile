@@ -4,8 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+flask = "*"
+pytest = "*"
+flasgger = "*"
 
 [dev-packages]
+
+[scripts]
+app = "flask --app app/api.py --debug run"
+tests = "pytest"
 
 [requires]
 python_version = "3.9"
