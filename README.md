@@ -12,6 +12,9 @@ pipenv install
 ```
 
 ### Run
+Project contains `.run` directory with build configurations for PyCharm. For command line, use:
+
 ```sh
 pipenv run app
+pipenv run tests
 ```
