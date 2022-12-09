@@ -10,3 +10,8 @@ After cloning the repository, execute command
 ```sh
 pipenv install
 ```
+
+### Run
+```sh
+pipenv run app
+```
