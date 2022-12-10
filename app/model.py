@@ -21,7 +21,7 @@ columns = ['texture_mean', 'area_mean', 'concavity_mean', 'area_se',
 def predict(data_dict: dict) -> int:
     transformed_data = dict_to_df(data_dict)
     [prediction] = ml_model.predict(transformed_data)
-    return prediction
+    return int(prediction)
 
 
 def dict_to_df(data_dict: dict) -> pd.DataFrame:
