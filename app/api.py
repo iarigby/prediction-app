@@ -1,14 +1,10 @@
 from flask import Flask, request, redirect
 from flasgger import Swagger
 
-from app import model
+from app import model, config
 
 app = Flask(__name__)
-swagger = Swagger(app, template={
-    "info": {
-        "title": "Breast Cancer Prediction API",
-    }
-})
+swagger = Swagger(app, template=config.swagger_template, config=config.swagger_config)
 
 
 @app.route("/predict")
@@ -106,4 +102,4 @@ def health_check():
 
 @app.route("/")
 def main_page():
-    return redirect('/apidocs')
+    return redirect('/docs')
