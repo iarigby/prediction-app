@@ -18,4 +18,4 @@ app = "flask --app app/api.py --debug run"
 tests = "pytest"
 
 [requires]
-python_version = "3.9"
+python_version = "3.10.8"
