@@ -48,4 +48,10 @@ def test_predict_endpoint_attribute_checking(client):
     prediction_request_body = {'texture_mean': 14.36}
     response = client.get("/predict", json=prediction_request_body)
     assert response.status_code == 422
-    assert response.json['error'] == 'one or more important values missing from data'
+    assert response.json['error'] == 'you need to send data with your request. see swagger documentation'
+
+
+def test_predict_endpoint_without_body(client):
+    response = client.get("/predict")
+    assert response.status_code == 422
+    assert response.json['error'] == 'you need to send data with your request. see swagger documentation'

@@ -63,13 +63,16 @@ def predict():
                         type: int
                         enum: [0, 1]
     """
+    incorrect_value_response = {
+            'error': 'you need to send data with your request. see swagger documentation'
+        }, 422
+    if not request.is_json:
+        return incorrect_value_response
     try:
         data = request.json
         result = model.predict(data)
     except AttributeError:
-        return {
-            'error': 'one or more important values missing from data'
-        }, 422
+        return incorrect_value_response
     return {
         'prediction': result
     }
