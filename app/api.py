@@ -105,4 +105,7 @@ def health_check():
 
 @app.route("/")
 def main_page():
-    return redirect('/docs')
+    return {
+        'name': 'Breast Cancer prediction application',
+        'version': '0.0.1',
+    }
