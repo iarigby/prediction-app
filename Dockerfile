@@ -15,4 +15,4 @@ RUN useradd -m appUser
 RUN chown appUser:appUser /usr/src/app
 
 USER appUser
-CMD ["gunicorn", "--bind", "0.0.0.0:5050", "app.api:app"]
+CMD ["gunicorn", "--bind", ":5050", "app.api:app"]
