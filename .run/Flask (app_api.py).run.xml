@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Flask (app/api.py)" type="Python.FlaskServer" nameIsGenerated="true">
+    <option name="additionalOptions" value="--port 5050" />
     <option name="flaskDebug" value="true" />
     <module name="prediction-app" />
     <option name="target" value="app/api.py" />

@@ -1,13 +1,15 @@
-from flask import Flask, request, redirect
+from flask import Flask, request
 from flasgger import Swagger
+from flask_cors import CORS
 
 from app import model, config
 
 app = Flask(__name__)
 swagger = Swagger(app, template=config.swagger_template, config=config.swagger_config)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-@app.route("/predict")
+@app.route("/predict", methods=['GET', 'POST'])
 def predict():
     """Prediction endpoint
     ---

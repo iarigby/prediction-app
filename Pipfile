@@ -10,11 +10,12 @@ flasgger = "*"
 setuptools = "*"
 scikit-learn = "*"
 pandas = "*"
+flask-cors = "*"
 
 [dev-packages]
 
 [scripts]
-app = "flask --app app/api.py --debug run"
+app = "flask --app app/api.py --port 5050 --debug run"
 tests = "pytest"
 
 [requires]
